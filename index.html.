@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Recommendation Study</title>
+</head>
+<body>
+    <p>Loading your assigned scenario. Please wait...</p>
+
+    <script>
+        // Four experimental scenarios
+        const scenarios = [
+            "a.html", // 6 laptops, High Detail
+            "b.html", // 6 laptops, Low Detail
+            "c.html", // 22 laptops, High Detail
+            "d.html"  // 22 laptops, Low Detail
+        ];
+
+        // Keep the assignment during page refreshes in this tab
+        let assignedScenario = sessionStorage.getItem("assignedScenario");
+
+        // Randomly assign a scenario if this participant has no assignment
+        if (!assignedScenario) {
+            const randomIndex = Math.floor(Math.random() * scenarios.length);
+            assignedScenario = scenarios[randomIndex];
+
+            sessionStorage.setItem("assignedScenario", assignedScenario);
+        }
+
+        // Redirect to the assigned scenario
+        window.location.replace(assignedScenario);
+    </script>
+</body>
+</html>
