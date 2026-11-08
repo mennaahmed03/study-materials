@@ -42,4 +42,52 @@ th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px soli
 <tr><td>20</td><td>ASUS Zenbook A14 (2026)</td><td>From about $1,099</td><td>Snapdragon X2 Elite</td><td>16GB / 512GB</td><td>14-inch OLED, 1920x1200</td><td>About 30 hrs (one test)</td></tr>
 <tr><td>21</td><td>Dell XPS 14 (2026)</td><td>$1,599.99 list</td><td>Core Ultra 5 325</td><td>16GB / 512GB</td><td>OLED or 1080p</td><td>10 to 14 hrs (mixed use)</td></tr>
 <tr><td>22</td><td>Lenovo ThinkPad X1 Carbon Gen 14</td><td>From $1,999</td><td>Intel Panther Lake</td><td>32GB or more / ?</td><td>2.8K OLED or IPS touch</td><td>Up to 24 hrs (IPS)</td></tr></table></div>
-</div></div></div><div class="bar"><div class="in">Message the assistant</div></div></body></html>
+</div></div></div><div class="bar"><div class="in">Message the assistant</div></div>
+<style>
+  #backToSurvey {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #176B45;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+
+  #backToSurvey.show {
+    display: block;
+  }
+</style>
+
+<a id="backToSurvey"
+   href="https://forms.gle/6phXyig6W12JjP3F8"
+   target="_blank">
+   ← Back to Survey
+</a>
+
+<script>
+  function checkScrollPosition() {
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 20;
+
+    if (atBottom) {
+      document.getElementById("backToSurvey")
+        .classList.add("show");
+    }
+  }
+
+  window.addEventListener("scroll", checkScrollPosition);
+  window.addEventListener("resize", checkScrollPosition);
+  checkScrollPosition();
+</script>
+</body></html>
