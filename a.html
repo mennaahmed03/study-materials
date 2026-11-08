@@ -67,4 +67,52 @@ th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px soli
 <li>Display: 14-inch 1920 x 1200 OLED, limited to 60Hz.</li>
 <li>Battery: 70Wh; one reviewer’s test lasted nearly 30 hours; weighs about 0.99 kg (2.18 lb).</li>
 <li>Notes: runs Windows on Arm, and reviewers point to remaining compatibility limitations.</li></ul>
-</div></div></div><div class="bar"><div class="in">Message the assistant</div></div></body></html>
+</div></div></div><div class="bar"><div class="in">Message the assistant</div></div>
+<style>
+  #backToSurvey {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #176B45;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+
+  #backToSurvey.show {
+    display: block;
+  }
+</style>
+
+<a id="backToSurvey"
+   href="https://forms.gle/6phXyig6W12JjP3F8"
+   target="_blank">
+   ← Back to Survey
+</a>
+
+<script>
+  function checkScrollPosition() {
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 20;
+
+    if (atBottom) {
+      document.getElementById("backToSurvey")
+        .classList.add("show");
+    }
+  }
+
+  window.addEventListener("scroll", checkScrollPosition);
+  window.addEventListener("resize", checkScrollPosition);
+  checkScrollPosition();
+</script>
+</body></html>
