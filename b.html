@@ -1,78 +1,55 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>AI Assistant</title><style>
-:root{--bg:#fff;--fg:#0d0d0d;--muted:#6b6b6b;--user:#f4f4f4;--line:#e5e5e5;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#212121;--fg:#ececec;--muted:#a1a1a1;--user:#2f2f2f;--line:#3d3d3d;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#212121;--fg:#ececec;--muted:#a1a1a1;--user:#2f2f2f;--line:#3d3d3d;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-.top{text-align:center;padding:14px 16px;font-weight:600;border-bottom:1px solid var(--line)}
-.wrap{max-width:760px;margin:0 auto;padding:20px 16px 24px}
-.n{text-align:center;font-size:13px;color:var(--muted);margin:0 0 24px}
-.u{display:flex;justify-content:flex-end;margin:0 0 28px}.u div{background:var(--user);border-radius:20px;padding:10px 18px;max-width:85%}
-.a{display:flex;gap:12px;margin:0 0 28px}.av{flex:none;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600}
-.m{min-width:0;flex:1}.m p{margin:0 0 12px}.m .h{margin:22px 0 8px;font-size:18px;font-weight:600}.m .t{margin:16px 0 4px;font-weight:600}
-ul{margin:0 0 14px;padding-left:22px}li{margin:3px 0}
-.tw{overflow-x:auto;margin:4px 0 16px;border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;font-size:14px;line-height:1.45;width:max-content;min-width:100%}
-th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{white-space:nowrap}tr:last-child td{border-bottom:0}
-.bar{position:sticky;bottom:0;background:var(--bg);padding:10px 16px 14px}.in{max-width:760px;margin:0 auto;border:1px solid var(--line);border-radius:26px;padding:13px 20px;color:var(--muted)}
-</style></head><body><div class="top">AI Assistant</div><div class="wrap"><p class="n">This is a saved conversation. Scroll to read the full response, then return to the survey.</p>
-<div class="u"><div>I’m looking to buy a laptop that I can use for working, studying, preparing assignments and presentations, browsing the internet, &amp; attending online classes. Can you recommend 6 laptops that would suit my needs? For each laptop, please provide low details about its price, processor, RAM, storage, display, and battery life (without pictures).</div></div>
-<div class="a"><div class="av">AI</div><div class="m">
-<p>Here are six laptops that suit work, study, assignments and presentations, browsing and online classes. Prices are mostly US list prices in USD, so local prices will differ.</p>
-<div class="tw"><table><tr><th>Laptop</th><th>Price</th><th>Processor</th><th>RAM / Storage</th><th>Display</th><th>Battery</th></tr>
-<tr><td>MacBook Air 13-inch (M5)</td><td>$1,099</td><td>Apple M5</td><td>16GB / 512GB</td><td>13.6-inch, 2560x1664</td><td>Up to 18 hrs</td></tr>
-<tr><td>MacBook Neo</td><td>$599</td><td>Apple A18 Pro</td><td>8GB / 256GB</td><td>13-inch, 2408x1506</td><td>Up to 16 hrs</td></tr>
-<tr><td>Dell XPS 13 (2026)</td><td>$699</td><td>Core 5 320 or Core Ultra 7 355</td><td>16GB / up to 1TB</td><td>13.4-inch touch, 2560x1600</td><td>Up to 17 hrs</td></tr>
-<tr><td>Acer Aspire 14 AI</td><td>About $700 (often $460 to $500 on sale)</td><td>Core Ultra 5 226V</td><td>16GB / 512GB</td><td>14-inch touch, 1920x1200</td><td>About 19 hrs (tested)</td></tr>
-<tr><td>Lenovo ThinkPad E14 Gen 7</td><td>From about $782</td><td>Core Ultra or Ryzen 7</td><td>16GB / 512GB</td><td>14-inch, 1920x1200</td><td>Up to 14.75 hrs</td></tr>
-<tr><td>Samsung Galaxy Book6 14-inch</td><td>$799.99</td><td>Intel Core 3 or Core 5</td><td>? / 256 to 512GB</td><td>14-inch, 1920x1200</td><td>Up to 25 hrs</td></tr></table></div>
-<p>A “?” means I couldn’t confirm that spec.</p>
-</div></div></div><div class="bar"><div class="in">Message the assistant</div></div>
-<style>
-  #backToSurvey {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #176B45;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 99999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    white-space: nowrap;
-  }
 
-  #backToSurvey.show {
-    display: block;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master's Survey</title>
+</head>
+<body>
 
-<a id="backToSurvey"
-   href="https://docs.google.com/forms/d/e/1FAIpQLSe-KSpLZRzCUuTa_AIwVD5ywVYei1h5et9T1Qk-uFZN4cTfXg/viewform?usp=pp_url&entry.395047500=B"
-   target="_blank">
-   ← Back to Survey
-</a>
+    <p style="font-family: Arial; text-align: center; margin-top: 100px;">
+        Please wait. You are being directed to your assigned survey...
+    </p>
 
-<script>
-  function checkScrollPosition() {
-    const atBottom =
-      window.innerHeight + window.scrollY >=
-      document.documentElement.scrollHeight - 20;
+    <script>
+        // Four Google Forms and their experimental conditions
+        const surveys = [
+            {
+                condition: "22xH",
+                url: "https://forms.gle/GMeimJPMngdSL6N56"
+            },
+            {
+                condition: "6xL",
+                url: "https://forms.gle/2wUkD9VgWMyGDFuS6"
+            },
+            {
+                condition: "22xL",
+                url: "https://forms.gle/nzCpU3xFkpR7MhLg8"
+            },
+            {
+                condition: "6xH",
+                url: "https://forms.gle/czfGEoFwYauKNb59A"
+            }
+        ];
 
-    if (atBottom) {
-      document.getElementById("backToSurvey")
-        .classList.add("show");
-    }
-  }
+        // Check whether this respondent already has an assignment
+        let assignedSurvey = sessionStorage.getItem("assignedSurvey");
 
-  window.addEventListener("scroll", checkScrollPosition);
-  window.addEventListener("resize", checkScrollPosition);
-  checkScrollPosition();
-</script>
-</body></html>
+        if (!assignedSurvey || !surveys.some(s => s.url === assignedSurvey)) {
+
+            // Randomly select one of the four surveys
+            const randomIndex = Math.floor(Math.random() * surveys.length);
+
+            assignedSurvey = surveys[randomIndex].url;
+
+            // Save the assignment for this browser tab session
+            sessionStorage.setItem("assignedSurvey", assignedSurvey);
+        }
+
+        // Redirect to the assigned Google Form
+        window.location.replace(assignedSurvey);
+    </script>
+
+</body>
+</html>
