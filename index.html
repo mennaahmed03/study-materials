@@ -14,27 +14,23 @@
 
     <script>
         // Four Google Forms and their experimental conditions
-        const surveys = [
-            {
-                condition: "22xH",
-                url: "https://forms.gle/GMeimJPMngdSL6N56"
-            },
-            {
-                condition: "6xL",
-                url: "https://forms.gle/2wUkD9VgWMyGDFuS6"
-            },
-            {
-                condition: "22xL",
-                url: "https://forms.gle/nzCpU3xFkpR7MhLg8"
-            },
-            {
-                condition: "6xH",
-                url: "https://forms.gle/czfGEoFwYauKNb59A"
-            }
-        ];
+       const surveys = [
+    {
+        condition: "22xH",
+        url: "https://forms.gle/GMeimJPMngdSL6N56"
+    },
+    {
+        condition: "6xL",
+        url: "https://forms.gle/2wUkD9VgWMyGDFuS6"
+    },
+    {
+        condition: "22xL",
+        url: "https://forms.gle/nzCpU3xFkpR7MhLg8"
+    }
+];
 
         // Check whether this respondent already has an assignment
-        let assignedSurvey = sessionStorage.getItem("assignedSurvey");
+        let assignedSurvey = sessionStorage.getItem("assignedSurvey_v2");
 
         if (!assignedSurvey || !surveys.some(s => s.url === assignedSurvey)) {
 
@@ -44,7 +40,7 @@
             assignedSurvey = surveys[randomIndex].url;
 
             // Save the assignment for this browser tab session
-            sessionStorage.setItem("assignedSurvey", assignedSurvey);
+            sessionStorage.setItem("assignedSurvey_v2", assignedSurvey);
         }
 
         // Redirect to the assigned Google Form
