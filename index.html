@@ -2,50 +2,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master's Survey</title>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master's Survey</title>
 
-    <p style="font-family: Arial; text-align: center; margin-top: 100px;">
-        Please wait. You are being directed to your assigned survey...
-    </p>
+  <script>
+    // Survey links (S4 temporarily excluded)
+    const links = [
+      "https://forms.gle/GMeimJPMngdSL6N56", // S1: 22 x H
+      "https://forms.gle/2wUkD9VgWMyGDFuS6", // S2: 6 x L
+      "https://forms.gle/nzCpU3xFkpR7MhLg8"  // S3: 22 x L
+    ];
 
-    <script>
-        // Four Google Forms and their experimental conditions
-       const surveys = [
-    {
-        condition: "22xH",
-        url: "https://forms.gle/GMeimJPMngdSL6N56"
-    },
-    {
-        condition: "6xL",
-        url: "https://forms.gle/2wUkD9VgWMyGDFuS6"
-    },
-    {
-        condition: "22xL",
-        url: "https://forms.gle/nzCpU3xFkpR7MhLg8"
+    // Randomly select one survey
+    function randomRedirect() {
+      const randomIndex = Math.floor(Math.random() * links.length);
+      const chosenUrl = links[randomIndex];
+
+      // Redirect to the selected survey
+      window.location.replace(chosenUrl);
     }
-];
 
-        // Check whether this respondent already has an assignment
-        let assignedSurvey = sessionStorage.getItem("assignedSurvey_v2");
+    // Run when the page loads
+    window.onload = randomRedirect;
+  </script>
+</head>
 
-        if (!assignedSurvey || !surveys.some(s => s.url === assignedSurvey)) {
+<body>
+  <p style="font-family: Arial; text-align: center; margin-top: 100px;">
+    Please wait. You are being directed to your assigned survey...
+  </p>
 
-            // Randomly select one of the four surveys
-            const randomIndex = Math.floor(Math.random() * surveys.length);
+  <p style="text-align: center;">
+    If nothing happens,
+    <a id="backup-link" href="#">click here</a>.
+  </p>
 
-            assignedSurvey = surveys[randomIndex].url;
-
-            // Save the assignment for this browser tab session
-            sessionStorage.setItem("assignedSurvey_v2", assignedSurvey);
-        }
-
-        // Redirect to the assigned Google Form
-        window.location.replace(assignedSurvey);
-    </script>
-
+  <script>
+    // Backup link if automatic redirection does not work
+    document.getElementById("backup-link").href = links[0];
+  </script>
 </body>
 </html>
